@@ -2,12 +2,12 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const { Webhook, MessageBuilder } = require("discord-webhook-node");
 
-const url = "https://exam.ioe.edu.np";
+const url = "https://aabhusanaryal.github.io/discord-ioe-notice/";
 
 const hookUrls = [
   "https://discord.com/api/webhooks/941367641581432862/37ILmcrBIiDf5H6gs16SZoQjXOLMUba6kvmMFl8AHlgCxwRs40e9a1bLEsPlh1XlOve7",
 ];
-const time = 2; //in minutes
+const time = 0.1; //in minutes
 let oldNotices = [{ title: "NULL" }];
 let newNotices = [];
 
