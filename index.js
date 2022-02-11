@@ -8,7 +8,7 @@ const hookUrls = [
   "https://discord.com/api/webhooks/941367641581432862/37ILmcrBIiDf5H6gs16SZoQjXOLMUba6kvmMFl8AHlgCxwRs40e9a1bLEsPlh1XlOve7",
   "https://discord.com/api/webhooks/941375271829901423/S5Ns6Xhwe3hnCcgZcwZpIgNx6p753WAylYvWTu1xfnXw_oC7-beFoDYAQdhGiZ1LCqvU",
 ];
-const time = 2; //in minutes
+const time = 0.1; //in minutes
 let oldNotices = [{ title: "NULL" }];
 let newNotices = [];
 
@@ -20,6 +20,7 @@ setInterval(() => {
   axios(url).then((res) => {
     html = res.data;
     const $ = cheerio.load(html);
+    newNotices = [];
     $("#datatable")
       .find("a")
       .each(function () {
@@ -27,6 +28,11 @@ setInterval(() => {
         newNotices.push({ title: notice.text(), link: notice.attr("href") });
       });
     // If any new notice
+    console.log(
+      newNotices[0].title,
+      oldNotices[0].title,
+      newNotices[0].title == oldNotices[0].title
+    );
     if (newNotices[0].title != oldNotices[0].title) {
       oldNotices = [...newNotices];
       let latestNotice = newNotices[0];
