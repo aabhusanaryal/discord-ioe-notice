@@ -5,8 +5,7 @@ const { Webhook, MessageBuilder } = require("discord-webhook-node");
 const url = "https://exam.ioe.edu.np";
 
 const hookUrls = [
-  "https://discord.com/api/webhooks/941367641581432862/37ILmcrBIiDf5H6gs16SZoQjXOLMUba6kvmMFl8AHlgCxwRs40e9a1bLEsPlh1XlOve7",
-  "https://discord.com/api/webhooks/941375271829901423/S5Ns6Xhwe3hnCcgZcwZpIgNx6p753WAylYvWTu1xfnXw_oC7-beFoDYAQdhGiZ1LCqvU",
+  
 ];
 const time = 1; //in minutes
 let oldNotices = [{ title: "NULL" }];
